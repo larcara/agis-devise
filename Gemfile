@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'awesome_nested_set'
 gem "paperclip", "~> 4.2"
 gem 'geocoder'
+gem "therubyracer"
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
