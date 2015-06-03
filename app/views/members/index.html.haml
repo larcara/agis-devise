@@ -1,0 +1,37 @@
+%h1 Listing members
+
+%table
+  %thead
+    %tr
+      %th Card number
+      %th First name
+      %th Last name
+      %th Fiscal code
+      %th Address
+      %th Zones of interest
+      %th Preferred owners
+      %th Preferred categories
+      %th Subcribed events
+      %th
+      %th
+      %th
+
+  %tbody
+    - @members.each do |member|
+      %tr
+        %td= member.card_number
+        %td= member.first_name
+        %td= member.last_name
+        %td= member.fiscal_code
+        %td= member.address
+        %td= member.zones_of_interest
+        %td= member.preferred_owners
+        %td= member.preferred_categories
+        %td= member.subcribed_events
+        %td= link_to 'Show', member
+        %td= link_to 'Edit', edit_member_path(member)
+        %td= link_to 'Destroy', member, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Member', new_member_path

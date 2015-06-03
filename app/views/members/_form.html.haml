@@ -1,0 +1,16 @@
+= simple_form_for(@member) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :card_number
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :fiscal_code
+    = f.input :address
+    = f.input :zones_of_interest
+    = f.input :preferred_owners
+    = f.input :preferred_categories
+    = f.input :subcribed_events
+
+  .form-actions
+    = f.button :submit

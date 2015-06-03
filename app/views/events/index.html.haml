@@ -1,0 +1,45 @@
+%h1 Listing events
+
+%table
+  %thead
+    %tr
+      %th Owner
+      %th Category
+      %th Date from
+      %th Date to
+      %th Time from
+      %th Time to
+      %th Weekdays
+      %th Note
+      %th Description
+      %th Photo1
+      %th Photo2
+      %th Photo3
+      %th Only for member
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.owner_id
+        %td= event.category_id
+        %td= event.date_from
+        %td= event.date_to
+        %td= event.time_from
+        %td= event.time_to
+        %td= event.weekdays
+        %td= event.note
+        %td= event.description
+        %td= event.photo1
+        %td= event.photo2
+        %td= event.photo3
+        %td= event.only_for_member
+        %td= link_to 'Show', event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Event', new_event_path

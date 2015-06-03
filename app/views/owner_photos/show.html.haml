@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Owner:
+  = @owner_photo.owner_id
+%p
+  %b Photo:
+  = @owner_photo.photo
+
+= link_to 'Edit', edit_owner_photo_path(@owner_photo)
+\|
+= link_to 'Back', owner_photos_path

@@ -1,0 +1,12 @@
+= simple_form_for(@feedback) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :event_id
+    = f.input :user_id
+    = f.input :vote
+    = f.input :comment
+    = f.input :is_anonymous
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,23 @@
+%h1 Listing owner_photos
+
+%table
+  %thead
+    %tr
+      %th Owner
+      %th Photo
+      %th
+      %th
+      %th
+
+  %tbody
+    - @owner_photos.each do |owner_photo|
+      %tr
+        %td= owner_photo.owner_id
+        %td= owner_photo.photo
+        %td= link_to 'Show', owner_photo
+        %td= link_to 'Edit', edit_owner_photo_path(owner_photo)
+        %td= link_to 'Destroy', owner_photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Owner photo', new_owner_photo_path

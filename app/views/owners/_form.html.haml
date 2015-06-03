@@ -1,0 +1,18 @@
+= simple_form_for(@owner) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :address
+    = f.input :city
+    = f.input :province
+    = f.input :cap
+    = f.input :municipality, as: :select, collection: Owner::MUNICIPALLIES
+    = f.input :level, as: :select, collection: Owner::LEVELS
+    = f.input :lat
+    = f.input :lon
+    = f.input :signed_since
+    = f.input :note
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @owner.nome
+%p
+  %b Note:
+  = @owner.note
+%p
+  %b Address:
+  = @owner.address
+%p
+  %b Cap:
+  = @owner.cap
+%p
+  %b Municipality:
+  = @owner.municipality
+%p
+  %b Province:
+  = @owner.province
+%p
+  %b Lat:
+  = @owner.lat
+%p
+  %b Lon:
+  = @owner.lon
+%p
+  %b Level:
+  = @owner.level
+%p
+  %b Signed since:
+  = @owner.signed_since
+
+= link_to 'Edit', edit_owner_path(@owner)
+\|
+= link_to 'Back', owners_path

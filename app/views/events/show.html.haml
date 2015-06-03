@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Owner:
+  = @event.owner_id
+%p
+  %b Category:
+  = @event.category_id
+%p
+  %b Date from:
+  = @event.date_from
+%p
+  %b Date to:
+  = @event.date_to
+%p
+  %b Time from:
+  = @event.time_from
+%p
+  %b Time to:
+  = @event.time_to
+%p
+  %b Weekdays:
+  = @event.weekdays
+%p
+  %b Note:
+  = @event.note
+%p
+  %b Description:
+  = @event.description
+%p
+  %b Photo1:
+  = @event.photo1
+%p
+  %b Photo2:
+  = @event.photo2
+%p
+  %b Photo3:
+  = @event.photo3
+%p
+  %b Only for member:
+  = @event.only_for_member
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

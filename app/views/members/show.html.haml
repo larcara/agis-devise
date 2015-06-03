@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Card number:
+  = @member.card_number
+%p
+  %b First name:
+  = @member.first_name
+%p
+  %b Last name:
+  = @member.last_name
+%p
+  %b Fiscal code:
+  = @member.fiscal_code
+%p
+  %b Address:
+  = @member.address
+%p
+  %b Zones of interest:
+  = @member.zones_of_interest
+%p
+  %b Preferred owners:
+  = @member.preferred_owners
+%p
+  %b Preferred categories:
+  = @member.preferred_categories
+%p
+  %b Subcribed events:
+  = @member.subcribed_events
+
+= link_to 'Edit', edit_member_path(@member)
+\|
+= link_to 'Back', members_path

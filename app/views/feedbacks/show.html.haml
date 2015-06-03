@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Event:
+  = @feedback.event_id
+%p
+  %b User:
+  = @feedback.user_id
+%p
+  %b Vote:
+  = @feedback.vote
+%p
+  %b Comment:
+  = @feedback.comment
+%p
+  %b Is anonymous:
+  = @feedback.is_anonymous
+
+= link_to 'Edit', edit_feedback_path(@feedback)
+\|
+= link_to 'Back', feedbacks_path
