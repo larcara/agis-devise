@@ -11,10 +11,88 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529110320) do
+ActiveRecord::Schema.define(version: 20150601163529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.integer  "category_id"
+    t.date     "date_from"
+    t.date     "date_to"
+    t.time     "time_from"
+    t.time     "time_to"
+    t.text     "weekdays"
+    t.text     "note"
+    t.text     "description"
+    t.text     "photo1"
+    t.text     "photo2"
+    t.text     "photo3"
+    t.boolean  "only_for_member"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.integer  "vote"
+    t.text     "comment"
+    t.boolean  "is_anonymous"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.text     "card_number"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "fiscal_code"
+    t.string   "address"
+    t.text     "zones_of_interest"
+    t.text     "preferred_owners"
+    t.text     "preferred_categories"
+    t.text     "subcribed_events"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "owner_photos", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string   "nome"
+    t.text     "note"
+    t.string   "address"
+    t.string   "cap"
+    t.string   "municipality"
+    t.string   "province"
+    t.float    "lat"
+    t.float    "lon"
+    t.string   "level"
+    t.date     "signed_since"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "city"
+    t.string   "country"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
